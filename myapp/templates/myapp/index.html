@@ -1,4 +1,22 @@
 {% extends 'myapp/base.html' %}
+
 {% block body %}
-this is the index page
+    <div class="product-container grid grid-cols-3 flex gap-4 mt-10">
+        {% for product in products %}
+        <div class="relative overflow-hidden rounded-lg shadow-md">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1200px-No-Image-Placeholder.svg.png" alt="{{ product.name }}" class="object-cover w-full h-82">
+            <div class="absolute bottom-0 left-0 right-0 bg-gray-800 bg-opacity-0 text-white p-4">
+                <div class="flex justify-between">
+                    <h3 class="text-lg font-medium">{{ product.name }}</h3>
+                    <p class="text-lg font-medium">${{ product.price }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>  
 {% endblock %}
+
+
+<p>Price: {{ product.price }}</p>
+<p>Description: {{ product.description }}</p>
+<p>Artist: {{ product.artist }}</p>
