@@ -7,9 +7,26 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Document</title>
 </head>
-<body>
+<body style="background-color: #acc7dc ">
+    <nav class="shadow-lg" style="background-color: #803f47 ;">
+        <div class="flex flex-wrap justify-between ml-3 items-center mx-auto px-4 py-2.5 ">
+            <a href="" class="flex items-center">
+                <img src="https://cdn-icons-png.flaticon.com/128/7007/7007014.png" alt="" class="w-12 h-12 mr-4 ">
+                <span class="self-center text-xml font-semibold" style="color: #ffffff">Beast's Bounty</span>
+            </a>
+            <div class="flex item-center">
+                <a href="" class="mr-6 text-sm font-medium text-grey-500" style="color: #ffffff">Dashboard</a>
+                <a href="" class="mr-6 text-sm font-medium text-grey-500" style="color: #ffffff">Sales</a>
+                <a href="" class="mr-6 text-sm font-medium text-grey-500" style="color: #ffffff">Orders</a>
+                <a href="" class="mr-6 text-sm font-medium text-grey-500" style="color: #ffffff">Create</a>
+                <a href="" class="mr-6 text-sm font-medium text-grey-500" style="color: #ffffff">Purchases</a>
+                <a href="" class="mr-6 text-sm font-medium text-grey-500" style="color: #ffffff">Logout</a>
+
+            </div>
+        </div>
+    </nav>
     {% block body %}
-    
+
     {% endblock %}
 </body>
 </html>
