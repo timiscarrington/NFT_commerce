@@ -1,0 +1,16 @@
+{% extends 'myapp/base.html' %}
+{% block body %}
+<div class="flex p-10">
+    <div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1200px-No-Image-Placeholder.svg.png" alt="{{ product.name }}" class=" object-cover w-auto h-64">
+    </div>
+    <div class="pl-10">
+        <div class="text-4xl mb-4"> {{ product.name }}</div>
+        <div class="mb-4"> {{ product.description }} </div>
+        <div class="mb-4 font-bold"> ${{ product.price }}0 </div>
+        <div>
+            <button id="checkout-button" class="text-white px-4 py-2 rounded-sm" style="background-color: #803f47;"> Buy </button>
+        </div>
+    </div>
+</div>
+{% endblock %}
