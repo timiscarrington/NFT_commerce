@@ -14,11 +14,11 @@ def index(request):
 def detail(request, id):
     product = Product.objects.get(id=id)
     stripe_publishable_key = settings.STRIPE_PUBLISHABLE_KEY
-    return render(request, 'myapp/detail.html', {'product': product})
+    return render(request, 'myapp/detail.html', {'product': product, 'stripe_publishable_key': stripe_publishable_key})
 
 @csrf_exempt
 def create_checkout_session(request, id):
-    request_data = json.load(request.body)
+    request_data = json.loads(request.body)
     product = Product.objects.get(id=id)
     stripe.api_key = settings.STRIPE_SECRET_KEY
     checkout_session = stripe.checkout.Session.create(
@@ -27,7 +27,7 @@ def create_checkout_session(request, id):
         line_items=[
             {
                 'price_data':{
-                    'currenct':'usd',
+                    'currency':'usd',
                     'product_data':{
                         'name':product.name,
                     },
